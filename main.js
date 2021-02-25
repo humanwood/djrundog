@@ -38,7 +38,7 @@ const BARK_PUSH = process.env.BARK_PUSH; //
 const PUSH_KEY = process.env.PUSH_KEY; //
 const TG_BOT_TOKEN = process.env.TG_BOT_TOKEN; //TG通知比较好用
 const TG_USER_ID = process.env.TG_USER_ID; //
-const HELPURL = process.env.HELPURL;//朱丽娜
+const JD_TG = process.env.JD_TG;//朱丽娜
 //个别参数 懂的自己加
 const JOY_FEED_COUNT = process.env.JOY_FEED_COUNT; //宠汪汪🐕喂食
 const JXNCTOKENS = process.env.JXNCTOKENS; //京戏农场种子
@@ -73,11 +73,8 @@ async function changeFiele(content, cookie) {
     newContent = newContent.replace(/require\('.\/(\w+)ShareCodes.js\'\)/g, JSON.stringify(shareCodes)); 
  
     newContent =newContent.replace(/var Key = ''/, `var Key = '${cookie}'`);
-       if (!HELPURL)  
-      console.log(`木有互助码数据，请在secret中加入朱丽娜网址`);
-      else
-     newContent =newContent.replace(`https://raw.githubusercontent.com/jd1994527314/iosrule/cs/JD_TG`, `${HELPURL}` );
-    
+ 
+     newContent =newContent.replace(`https://raw.githubusercontent.com/jd1994527314/iosrule/cs/JD_TG`, `${JD_TG}` );
      
       await fs.writeFileSync( './temp.js', newContent, 'utf8')
     
@@ -172,7 +169,7 @@ else
 start();
 
 
-function hideme(st)
+async function hideme(st)
 {let fn1=""
 var zg =  /^[0-9a-zA-Z]*$/;
 

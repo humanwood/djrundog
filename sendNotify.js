@@ -21,9 +21,9 @@ let QQ_MODE = 'send';
 
 // =======================================Bark App通知设置区域===========================================
 //此处填你BarkAPP的信息(IP/设备码，例如：https://api.day.app/XXXXXXXX)
-let BARK_PUSH = '';
+let BARK_PUSH = '5GZ4tu8WbMfiYv4YAvKL2H';
 //BARK app推送铃声,铃声列表去APP查看复制填写
-let BARK_SOUND = '';
+let BARK_SOUND = 'shake';
 
 
 // =======================================telegram机器人通知设置区域===========================================
